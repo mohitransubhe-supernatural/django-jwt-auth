@@ -1,0 +1,66 @@
+<html>
+<head>
+<style>
+.menuTop {
+	--color-text: #fbd54a;
+	--color-bg: #333;
+	--color-link: #4d4f5f;
+	--color-link-hover: #bfb5b5;
+	--color-info: #fff;
+	--color-main-bg: #24262d;
+	/*--path-fill-1: #24262d;
+	--path-fill-2: #1d1d1f;
+	--path-fill-3: #000;*/
+	
+	--path-fill-1: #281117;
+	--path-fill-2: #29181e;
+	--path-fill-3: #12050c;
+	
+	--color-title: #fff;
+	--font-weight-title: 400;
+	--color-menu: #fff;
+	--color-menu-hover: #c5252c;
+	--font-size-menu: 24px;
+	--font-weight-menu: 400;
+	--button-bg: #fff;
+	--button-circle: #ada4a4;
+	--button-line: #222;
+}
+.shape-overlays {
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.shape-overlays.is-opened {
+	pointer-events: auto;
+}
+
+.shape-overlays__path:nth-of-type(1) {
+	fill: var(--path-fill-1);
+}
+
+.shape-overlays__path:nth-of-type(2) {
+	fill: var(--path-fill-2);
+}
+
+.shape-overlays__path:nth-of-type(3) {
+	fill: var(--path-fill-3);
+}
+
+.shape-overlays__path:nth-of-type(4) {
+	fill: var(--path-fill-4);
+}
+</style>
+</head>
+<body class="menuTop">
+<svg class="shape-overlays is-opened" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path class="shape-overlays__path" d="M 0 0 V 100 C 50 100 50 100 100 100 V 0 H 0"></path>
+                            <path class="shape-overlays__path" d="M 0 0 V 100 C 50 100 50 100 100 100 V 0 H 0"></path>
+                            <path class="shape-overlays__path" d="M 0 0 V 100 C 50 100 50 100 100 100 V 0 H 0"></path>
+                            </svg>
+</body>
+</html>

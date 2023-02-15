@@ -1,6 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router, redirect, Route, Routes} from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
+import {AuthProvider} from "./context/AuthContext";
 import HomePage from './pages/HomePage'
 import LoginPage from "./pages/LoginPage";
 import Header from "./components/Header";
@@ -10,15 +11,15 @@ function App() {
     return (
         <div className="App">
             <Router>
-                <Header/>
-                <Routes>
-                    {/*<Route element={<PrivateRoute />}>*/}
-                    <Route element={<PrivateRoute><HomePage/></PrivateRoute>} path="/" exact />
-                    <Route element={<LoginPage/>} path="/login"/>
-
-
-                    {/*</Route>*/}
-                </Routes>
+                <AuthProvider>
+                    <Header/>
+                    <Routes>
+                        {/*<Route element={<PrivateRoute />}>*/}
+                        <Route element={<PrivateRoute><HomePage/></PrivateRoute>} path="/" exact/>
+                        <Route element={<LoginPage/>} path="/login"/>
+                        {/*</Route>*/}
+                    </Routes>
+                </AuthProvider>
             </Router>
         </div>
     );

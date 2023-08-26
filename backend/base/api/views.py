@@ -46,6 +46,18 @@ def getNotes(request):
     serializer = NoteSerializer(notes, many=True)
     return Response(serializer.data)
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def addNote(request):
+    try:
+        data = request.data
+        data['user_id'] = request.user.id
+        note = Note.objects.create(**data)
+        if note:
+            return Response({'message': 'Note added successfully.'}, status=200)
+    except Exception as e:
+        return Response({"errors": str(e)}, status=400)
+
 
 class Register(APIView):
     def post(self, request):

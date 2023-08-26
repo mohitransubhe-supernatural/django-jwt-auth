@@ -10,9 +10,13 @@ const Header = () => {
             <span> | </span>
             {
                 user ? (
-                    <p onClick={logoutUser}>Logout</p>
+                    <p onClick={logoutUser} style={{'cursor': 'pointer'}}>Logout</p>
                 ) : (
-                    <Link to="/login">Login</Link>
+                    <React.Fragment>
+                        <Link to="/login">Login</Link>
+                        <span> | </span>
+                        <Link to="/register">Register</Link>
+                    </React.Fragment>
                 )
             }
 

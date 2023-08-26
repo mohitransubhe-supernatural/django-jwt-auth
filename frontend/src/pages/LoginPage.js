@@ -1,9 +1,16 @@
 import React, {useContext} from "react";
 import AuthContext from "../context/AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
 
-    let {loginUser} = useContext(AuthContext)
+    let {authTokens, loginUser} = useContext(AuthContext)
+
+    const navigate = useNavigate()
+
+    if (authTokens) {
+        return navigate('/');
+    }
 
     return (
         <div>
@@ -15,5 +22,6 @@ const LoginPage = () => {
         </div>
     )
 }
+
 
 export default LoginPage
